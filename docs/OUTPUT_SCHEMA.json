@@ -1,0 +1,98 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Tax Law Reasoning Output Schema",
+  "description": "Strict JSON schema for LLM responses in tax law reasoning evaluation",
+  "type": "object",
+  "required": ["case_id", "narrative", "law_citations", "reasoning_steps", "final_answer"],
+  "additionalProperties": false,
+  "properties": {
+    "case_id": {
+      "type": "string",
+      "description": "Case identifier matching the input case"
+    },
+    "narrative": {
+      "type": "string",
+      "description": "Concise case story describing the tax situation"
+    },
+    "law_citations": {
+      "type": "array",
+      "description": "Law citations used in reasoning",
+      "items": {
+        "type": "object",
+        "required": ["ref", "snippet"],
+        "additionalProperties": false,
+        "properties": {
+          "ref": {
+            "type": "string",
+            "description": "Law reference ID (must be among retrieved law_refs)"
+          },
+          "snippet": {
+            "type": "string",
+            "description": "Relevant law text snippet"
+          }
+        }
+      }
+    },
+    "reasoning_steps": {
+      "type": "array",
+      "description": "Structured reasoning steps with evidence",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["step", "claim", "evidence"],
+        "additionalProperties": false,
+        "properties": {
+          "step": {
+            "type": "string",
+            "description": "Step description (e.g., 'Compute gross income')"
+          },
+          "claim": {
+            "type": "string",
+            "description": "Claim made in this step"
+          },
+          "evidence": {
+            "type": "array",
+            "description": "Evidence supporting the claim",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "required": ["source", "content"],
+              "additionalProperties": false,
+              "properties": {
+                "source": {
+                  "type": "string",
+                  "pattern": "^(fact:|law:).*",
+                  "description": "Evidence source (must start with 'fact:' or 'law:')"
+                },
+                "content": {
+                  "type": "string",
+                  "description": "Evidence content"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "final_answer": {
+      "type": "object",
+      "description": "Final computed answer",
+      "required": ["explanation"],
+      "additionalProperties": false,
+      "properties": {
+        "amount": {
+          "type": "number",
+          "description": "Numeric result (if applicable)"
+        },
+        "verdict": {
+          "type": "string",
+          "description": "Categorical verdict (if applicable)"
+        },
+        "explanation": {
+          "type": "string",
+          "description": "Brief explanation of the final answer"
+        }
+      }
+    }
+  }
+}

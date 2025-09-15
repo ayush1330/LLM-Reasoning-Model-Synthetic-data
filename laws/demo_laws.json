@@ -1,0 +1,6 @@
+{
+  "§DON-10pct": "Charitable contributions are deductible up to 10% of gross income.",
+  "§RET-6000": "Retirement contributions are deductible up to €6,000 per tax year.",
+  "§CHILD-CR-Phaseout": "Child tax credit is €2,000 per qualifying child. The credit phases out at 5% for each euro of AGI above €90,000, reducing to zero when AGI reaches €130,000.",
+  "§STD-DED": "Standard deduction is €10,000 per tax year. Taxpayers may choose between standard deduction or itemized deductions, whichever is higher."
+}
