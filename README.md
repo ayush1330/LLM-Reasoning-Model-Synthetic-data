@@ -1,12 +1,12 @@
-# Taxfix MuSR - Synthetic Tax Law Reasoning Module
+# LLM Reasoning Model with Synthetic Data Generation
 
-A Python module for generating synthetic tax law cases and evaluating LLM reasoning capabilities. Based on the MuSR (Multi-step Structured Reasoning) methodology.
+A comprehensive Python framework I developed for generating synthetic tax law cases and evaluating Large Language Model (LLM) reasoning capabilities. This project implements the MuSR (Multi-step Structured Reasoning) methodology to create complex, realistic tax scenarios and assess how well LLMs can navigate multi-step reasoning tasks in a specialized domain.
 
-## Overview
+## Project Overview
 
-This system creates complex tax scenarios, generates ground truth via logic trees, and evaluates how well LLMs can reason through multi-step tax calculations. It's designed for testing LLM reasoning capabilities in domain-specific contexts.
+I designed this system to address the challenge of evaluating LLM reasoning in specialized domains like tax law. The framework generates complex, realistic tax scenarios, computes ground truth solutions via deterministic logic trees, and provides comprehensive evaluation metrics for LLM performance. This project demonstrates my ability to work with LLMs, domain-specific reasoning, and evaluation methodologies.
 
-## Key Features
+## Key Features & Technical Highlights
 
 - **Complex Narrative Generation**: Creates diverse tax scenarios with varying complexity levels
 - **Ground Truth Computation**: Deterministic calculation of correct answers via logic trees
@@ -14,7 +14,7 @@ This system creates complex tax scenarios, generates ground truth via logic tree
 - **Agentic Retry**: Self-correction mechanism for improved performance
 - **Comprehensive Reporting**: JSON, JSONL, and Markdown output formats
 
-## Quick Start
+## Getting Started
 
 ### Installation
 ```bash
@@ -67,7 +67,7 @@ The system generates complex tax scenarios instead of simple arithmetic problems
 - **Family**: Child credit and dependent scenarios
 - **Business**: Mixed personal/business income situations
 
-## Programmatic Usage
+## Technical Implementation
 
 ```python
 from taxfix_musr import random_case, LogicTree
@@ -84,7 +84,7 @@ print(f"Expected taxable income: {ground_truth['taxable_income']}")
 
 For full evaluation workflows, see the example scripts in `examples/`.
 
-## Output Files
+## Project Outputs
 
 Running evaluations generates several output files:
 
@@ -104,7 +104,7 @@ uv run python scripts/extract_narratives.py out/report.jsonl -f detailed
 uv run python scripts/extract_narratives.py out/report.jsonl -f dataset
 ```
 
-## Configuration
+## Technical Configuration
 
 ### Environment Variables
 ```bash
@@ -151,19 +151,35 @@ tests/                    # Test suite
 docs/                     # Schema and prompt documentation
 ```
 
-## Performance
+## Performance & Optimization
 
+Through careful optimization, I achieved excellent performance metrics:
 - **Case Generation**: < 0.1 seconds per case
 - **Logic Tree Computation**: < 0.01 seconds per case  
 - **LLM Evaluation**: 2-10 seconds per case (model dependent)
 - **Caching**: 50%+ hit rate for repeated cases
 
-## Architecture
+These optimizations demonstrate my ability to build efficient, production-ready ML systems.
 
-The system follows a three-stage MuSR methodology:
+## Architecture & Design
 
-1. **Logic Tree Construction**: Build deterministic computation graphs from tax facts and rules
-2. **Narrative Generation**: Convert structured cases into natural language scenarios
-3. **Reasoning Evaluation**: Score LLM responses against ground truth with detailed metrics
+This project showcases my system design skills through a sophisticated three-stage MuSR architecture:
 
-This approach ensures reliable ground truth while testing complex reasoning capabilities.# LLM-Reasoning-Model-Synthetic-data
+1. **Logic Tree Construction**: I designed a flexible system that builds deterministic computation graphs from tax facts and rules, ensuring reliable ground truth generation.
+2. **Narrative Generation**: I implemented a robust system that converts structured tax cases into natural language scenarios with varying complexity levels.
+3. **Reasoning Evaluation**: I developed a comprehensive scoring system that evaluates LLM responses across multiple dimensions, providing detailed performance metrics.
+
+## Technical Skills Demonstrated
+
+- **Programming**: Python, OOP, Clean Architecture
+- **ML/LLM**: Prompt Engineering, Evaluation Metrics, Synthetic Data Generation
+- **Tools**: Git, Pytest, Pydantic, OpenAI API
+- **Concepts**: Domain-Specific Languages, Deterministic Testing, Performance Optimization
+
+## Future Enhancements
+
+I'm currently working on expanding this project with:
+- Support for additional tax jurisdictions
+- More sophisticated reasoning patterns
+- Integration with open-weight LLMs
+- Interactive demo interface# LLM-Reasoning-Model-Synthetic-data
